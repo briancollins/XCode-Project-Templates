@@ -1,3 +1,2 @@
-cd ~/Library/Application Support/Developer/Shared/Xcode/
+cd ~/Library/Application\ Support/Developer/Shared/Xcode/
 git clone git://github.com/briancollins/XCode-Project-Templates.git Project\ Templates
-
