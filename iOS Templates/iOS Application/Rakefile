@@ -1,0 +1,23 @@
+require 'base64'
+require 'openssl'
+require 'digest/sha1'
+require 'json'
+
+task :beta do
+  target = "___PROJECTNAME___"
+  version = `git rev-parse HEAD`.strip 
+  folder = "#{target}-#{version}"
+  sh "mkdir -p beta/#{folder}"
+  sh "mkdir Payload"
+  sh "cp -rp build/Release-iphoneos/#{target}.app Payload/"
+  sh "cp -rp build/Release-iphoneos/#{target}.app.dSYM #{target}.app.dSYM"
+  sh "cp res/iTunesArtwork.png iTunesArtwork"
+  ipa = "beta/#{folder}/#{target}.ipa"
+  sym = "beta/#{folder}/#{target}.app.dSYM.zip"
+
+  sh "zip -r #{ipa} iTunesArtwork Payload"
+  sh "rm -rf iTunesArtwork Payload"
+  sh "zip -r #{sym} #{target}.app.dSYM"
+  sh "rm -rf #{target}.app.dSYM"
+end
+
