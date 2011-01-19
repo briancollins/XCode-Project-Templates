@@ -91,9 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				D33703C412E6FF9F00D61DEF /* base */,
-				D33703C712E6FF9F00D61DEF /* controllers */,
 				D33703C812E6FF9F00D61DEF /* models */,
 				D33703C912E6FF9F00D61DEF /* views */,
+				D33703C712E6FF9F00D61DEF /* controllers */,
 				D33703CA12E6FF9F00D61DEF /* XXAppDelegate.h */,
 				D33703CB12E6FF9F00D61DEF /* XXAppDelegate.m */,
 			);
